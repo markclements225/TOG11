@@ -32,15 +32,8 @@ export default function Sidebar() {
   console.log(playlists)
 
   return (
-    <div className="h-screen overflow-y-scroll border-r border-gray-900 p-5 text-sm text-gray-500 scrollbar-hide ">
+    <div className="hidden h-screen overflow-y-scroll border-r border-gray-900 p-5 text-xs text-gray-500 scrollbar-hide sm:max-w-[12rem] md:inline-flex lg:max-w-[15rem] lg:text-sm">
       <div className="space-y-4">
-        <button
-          className="flex items-center space-x-2 hover:text-white"
-          onClick={() => signOut()}
-        >
-          <LogoutIcon className="h-5 w-5" />
-          <p>Logout</p>
-        </button>
         <button className="flex items-center space-x-2 hover:text-white">
           <HomeIcon className="h-5 w-5" />
           <p>Home</p>
@@ -67,7 +60,6 @@ export default function Sidebar() {
           <RssIcon className="h-5 w-5" />
           <p>Your Episodes</p>
         </button>
-        <hr className="border-t-[0.1px] border-gray-900" />
 
         {/* {Playlist} */}
         {playlists.map((playlist) => (
@@ -79,6 +71,14 @@ export default function Sidebar() {
             {playlist.name}
           </p>
         ))}
+        <hr className="border-t-[0.1px] border-gray-900" />
+        <button
+          className="flex items-center space-x-2 hover:text-white"
+          onClick={() => signOut()}
+        >
+          <LogoutIcon className="h-5 w-5" />
+          <p>Logout</p>
+        </button>
       </div>
     </div>
   )
